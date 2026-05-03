@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="ALLOWALL">
+    <title>Nitro Rush - 3D Racing</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden}</style>
+</head>
+<body>
+    <!-- Main Menu -->
+    <div id="main-menu" class="overlay">
+        <div class="menu-content">
+            <h1>NITRO RUSH</h1>
+            <p class="subtitle">3D RACING</p>
+            <button id="btn-play" class="menu-btn">PLAY</button>
+            <button id="btn-quit" class="menu-btn secondary">QUIT</button>
+        </div>
+    </div>
+
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="overlay hidden">
+        <div class="menu-content setup-panel">
+            <h2>RACE SETUP</h2>
+
+            <div class="setup-section">
+                <h3>TRACK</h3>
+                <div class="option-group" id="track-options">
+                    <button class="option-btn active" data-value="greenfield">
+                        <span class="opt-name">Greenfield</span>
+                        <span class="opt-desc">Classic grassland</span>
+                    </button>
+                    <button class="option-btn" data-value="desert">
+                        <span class="opt-name">Desert Storm</span>
+                        <span class="opt-desc">Wide &amp; fast</span>
+                    </button>
+                    <button class="option-btn" data-value="neon">
+                        <span class="opt-name">Neon Speedway</span>
+                        <span class="opt-desc">Tight &amp; technical</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="setup-section">
+                <h3>MODE</h3>
+                <div class="option-group" id="mode-options">
+                    <button class="option-btn active" data-value="quickrace">
+                        <span class="opt-name">Quick Race</span>
+                        <span class="opt-desc">3 laps vs AI</span>
+                    </button>
+                    <button class="option-btn" data-value="timetrial">
+                        <span class="opt-name">Time Trial</span>
+                        <span class="opt-desc">Solo — best time</span>
+                    </button>
+                    <button class="option-btn" data-value="endurance">
+                        <span class="opt-name">Endurance</span>
+                        <span class="opt-desc">7 laps vs AI</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="setup-section">
+                <h3>DIFFICULTY</h3>
+                <div class="option-group" id="diff-options">
+                    <button class="option-btn" data-value="easy">
+                        <span class="opt-name">Easy</span>
+                        <span class="opt-desc">Relaxed</span>
+                    </button>
+                    <button class="option-btn active" data-value="medium">
+                        <span class="opt-name">Medium</span>
+                        <span class="opt-desc">Balanced</span>
+                    </button>
+                    <button class="option-btn" data-value="hard">
+                        <span class="opt-name">Hard</span>
+                        <span class="opt-desc">Aggressive</span>
+                    </button>
+                </div>
+            </div>
+
+            <button id="btn-start-race" class="menu-btn">START RACE</button>
+            <button id="btn-back-menu" class="menu-btn secondary">BACK</button>
+        </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+        <div id="speed-display">
+            <span id="speed-value">0</span>
+            <span class="unit">KM/H</span>
+        </div>
+        <div id="lap-display">LAP <span id="lap-current">1</span>/<span id="lap-total">3</span></div>
+        <div id="timer-display">00:00.00</div>
+        <div id="position-display"><span id="position-value">1st</span></div>
+        <div id="boost-bar-container">
+            <div id="boost-bar"></div>
+            <span id="boost-label">NITRO</span>
+        </div>
+    </div>
+
+    <!-- Countdown -->
+    <div id="countdown" class="overlay hidden">
+        <span id="countdown-text">3</span>
+    </div>
+
+    <!-- Pause Menu -->
+    <div id="pause-menu" class="overlay hidden">
+        <div class="menu-content">
+            <h2>PAUSED</h2>
+            <button id="btn-resume" class="menu-btn">RESUME</button>
+            <button id="btn-restart" class="menu-btn">RESTART</button>
+            <button id="btn-quit-race" class="menu-btn secondary">QUIT TO MENU</button>
+        </div>
+    </div>
+
+    <!-- Finish Screen -->
+    <div id="finish-screen" class="overlay hidden">
+        <div class="menu-content">
+            <h2 id="finish-title">RACE COMPLETE!</h2>
+            <p id="finish-time">Time: 00:00.00</p>
+            <p id="finish-position">Position: 1st</p>
+            <button id="btn-restart-finish" class="menu-btn">RACE AGAIN</button>
+            <button id="btn-menu-finish" class="menu-btn secondary">MAIN MENU</button>
+        </div>
+    </div>
+
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitro Rush — Embed Example</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0a0a0a; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; gap: 12px; }
+        h2 { color: #00ffcc; letter-spacing: 4px; font-size: 14px; }
+        iframe {
+            width: 900px;
+            height: 560px;
+            max-width: 100%;
+            border: 2px solid #1a2a2a;
+            border-radius: 8px;
+            display: block;
+        }
+        code {
+            background: #111;
+            color: #00ffcc;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            max-width: 900px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <h2>NITRO RUSH — IFRAME EMBED</h2>
+
+    <!--
+        IMPORTANT: Must be served via HTTP (not file://).
+        Run: python -m http.server 8080
+        Then open: http://localhost:8080/embed.html
+    -->
+    <iframe
+        src="./index.html"
+        allow="autoplay"
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+        title="Nitro Rush 3D Racing">
+    </iframe>
+
+    <code>
+        &lt;iframe src="./index.html" allow="autoplay" sandbox="allow-scripts allow-same-origin allow-popups" title="Nitro Rush"&gt;&lt;/iframe&gt;
+    </code>
+</body>
+</html>
